@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  cloud:
+    gcp:
+      sql:
+        instance-connection-name: cpsc-5207el-06-microservice:northamerica-northeast2:mysql-cloud-project
+        database-name: cloud_project_group1
+      project-id: cpsc-5207el-06-microservice
+  datasource:
+    username: mall
+    password: mysql@gcp
+    url: jdbc:mysql://google/${spring.cloud.gcp.sql.instance-connection-name}/${spring.cloud.gcp.sql.database-name}?useSSL=false
+  data:
+    redis:
+      host: 10.188.0.4
+      port: 6379
+server:
+  port: 8080
+
+services:
+  product:
+    url: https://product-service-1093235080572.northamerica-northeast2.run.app/api/product

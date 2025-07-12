@@ -1,0 +1,17 @@
+management:
+  tracing:
+    sampling:
+      # 采样率设置为 1.0 表示 100% 采样，即捕获所有追踪
+      probability: 1.0
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/group1_user?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  data:
+    redis:
+      host: localhost
+server:
+  port: 9090
+  servlet:
+    context-path: /api

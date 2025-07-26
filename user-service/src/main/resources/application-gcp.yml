@@ -1,4 +1,8 @@
 spring:
+  config:
+    import:
+      - sm://db-username
+      - sm://db-password
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,8 +16,9 @@ spring:
         database-name: cloud_project_group1
       project-id: cpsc-5207el-06-microservice
   datasource:
-    username: mall
-    password: mysql@gcp
+    username: ${sm://db-username}
+    password: ${sm://db-password}
+#    password: mysql@gcp
     url: jdbc:mysql://google/${spring.cloud.gcp.sql.instance-connection-name}/${spring.cloud.gcp.sql.database-name}?useSSL=false
   data:
     redis:

@@ -29,6 +29,10 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>spring-cloud-gcp-starter-secretmanager</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.sp25.cs5207el06</groupId>
             <artifactId>model</artifactId>
         </dependency>
